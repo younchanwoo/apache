@@ -2,7 +2,7 @@
 
 * 정상 설치시
 
-`` [apache@TEST2 bin]$ openssl s_client –connect localhost:443
+``` [apache@TEST2 bin]$ openssl s_client –connect localhost:443
 CONNECTED(00000003)
 depth=3 C = GB, ST = Greater Manchester, L = Salford, O = Comodo CA Limited, CN = AAA Certificate Services
 verify return:1
@@ -104,12 +104,12 @@ SSL-Session:
  
     Start Time: 1574815921
     Timeout   : 300 (sec)
-    Verify return code: 0 (ok) ``
+    Verify return code: 0 (ok) ```
 
 * Chain 인증서 미 설정시
 	* 제일 하단의 Verify return code: 21 (unable to verify the first certificate)
 
-`` [apache@TEST2 bin]$ openssl s_client -connect localhost:443
+``` [apache@TEST2 bin]$ openssl s_client -connect localhost:443
 CONNECTED(00000003)
 depth=0 C = KR, ST = Gyeonggi-Do, L = "Bundang-gu, Seongnam-si", O = KT Corporation, OU = IT, OU = "Hosted by Korea Information Certificate Authority, Inc.", OU = InstantSSL, CN = ibotcms.kt.co.kr
 verify error:num=20:unable to get local issuer certificate
@@ -208,9 +208,9 @@ SSL-Session:
     Timeout   : 300 (sec)
     Verify return code: 21 (unable to verify the first certificate)
 ---
-closed ``
+closed ```
 
 * 신뢰하지 못하는 ROOT인증서 일 경우
-`	제일하단의 Verify return Code:19 ( Self Signed Certifitcate in certificate chain)
+```	제일하단의 Verify return Code:19 ( Self Signed Certifitcate in certificate chain)
 		-       사설 인증서 일 경우
-		-       OS에서 신뢰할수 있는 ROOT인증서로 미등록이 된 경우`
+		-       OS에서 신뢰할수 있는 ROOT인증서로 미등록이 된 경우```
